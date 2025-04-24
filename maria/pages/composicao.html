@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composição - POO em PHP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --primary: #1a1a40;
+      --secondary: #ff6f61;
+      --accent: #ffe66d;
+      --text: #f5f5f5;
+      --bg: #f0f0f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--text);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .container h2 {
+      margin-top: 2rem;
+      color: var(--secondary);
+    }
+
+    pre {
+      background-color: #2d2d2d;
+      color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .lottie {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Composição em POO</h1>
+  </header>
+
+  <div class="container">
+    <p>A composição é uma relação entre objetos onde a vida do objeto "parte" (objeto composto) depende da vida do objeto "todo" (objeto composto). Ou seja, se o objeto "todo" for destruído, todos os objetos que ele compõe também são destruídos.</p>
+
+    <h2>Exemplo de Composição</h2>
+    <pre><code>class Motor {
+  public $modelo;
+
+  public function __construct($modelo) {
+    $this->modelo = $modelo;
+  }
+}
+
+class Carro {
+  private $motor;
+
+  public function __construct($modelo_motor) {
+    $this->motor = new Motor($modelo_motor);
+  }
+
+  public function info() {
+    return "O carro tem um motor do modelo " . $this->motor->modelo;
+  }
+}
+
+$carro = new Carro("V8");
+echo $carro->info();
+    </code></pre>
+
+    <p>No exemplo acima, o motor é criado e destruído juntamente com o carro, ou seja, o motor não existe sem o carro. A relação é de forte dependência entre os objetos.</p>
+
+    <div class="lottie">
+      <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_ezj4rrxg.json" background="transparent" speed="1" style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+    </div>
+  </div>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar para a Home</a>
+</body>
+</html>

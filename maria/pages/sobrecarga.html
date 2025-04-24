@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobrecarga de Métodos - POO em PHP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --primary: #1a1a40;
+      --secondary: #ff6f61;
+      --accent: #ffe66d;
+      --text: #f5f5f5;
+      --bg: #f0f0f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--text);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .container h2 {
+      margin-top: 2rem;
+      color: var(--secondary);
+    }
+
+    pre {
+      background-color: #2d2d2d;
+      color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .lottie {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sobrecarga de Métodos em POO</h1>
+  </header>
+
+  <div class="container">
+    <p>A sobrecarga de métodos é um conceito onde uma classe pode ter vários métodos com o mesmo nome, mas com diferentes assinaturas (quantidade ou tipo de parâmetros). Em PHP, a sobrecarga de métodos não é suportada nativamente como em outras linguagens, mas podemos usar o método <code>__call()</code> para simular isso.</p>
+
+    <h2>Exemplo de Sobrecarga de Métodos</h2>
+    <pre><code>class ExemploSobrecarga {
+  public function __call($nome, $argumentos) {
+    if ($nome == "saudar") {
+      if (count($argumentos) == 1) {
+        return "Olá, " . $argumentos[0];
+      } else {
+        return "Olá, desconhecido!";
+      }
+    }
+  }
+}
+
+$obj = new ExemploSobrecarga();
+echo $obj->saudar("Maria");  // Olá, Maria
+echo $obj->saudar();         // Olá, desconhecido!
+    </code></pre>
+
+    <p>No exemplo acima, o método <code>saudar()</code> foi sobrecarregado. Dependendo de quantos parâmetros são passados, o comportamento do método muda.</p>
+
+    <div class="lottie">
+      <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_0onf9fhb.json" background="transparent" speed="1" style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+    </div>
+  </div>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar para a Home</a>
+</body>
+</html>

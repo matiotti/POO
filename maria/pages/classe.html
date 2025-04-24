@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classe - POO em PHP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --primary: #1a1a40;
+      --secondary: #ff6f61;
+      --accent: #ffe66d;
+      --text: #f5f5f5;
+      --bg: #f0f0f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--text);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .lottie {
+      margin-top: 2rem;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .intro h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .code {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      overflow-x: auto;
+    }
+
+    .code pre {
+      background: #eee;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    a.btn-voltar {
+      display: block;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--primary);
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Classe</h1>
+    <p>Descubra o que é uma classe na Programação Orientada a Objetos.</p>
+    <div class="lottie">
+    <center>  <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_1cazwtnc.json" background="transparent" speed="1" style="width: 250px; height: 250px;" loop autoplay></lottie-player></center>
+    </div>
+  </header>
+
+  <section class="intro">
+    <h2>O que é uma Classe?</h2>
+    <p>Uma <strong>classe</strong> é um modelo ou molde para criar objetos. Ela define os atributos (características) e métodos (comportamentos) que os objetos terão. No PHP, usamos a palavra-chave <code>class</code> para definir uma classe.</p>
+  </section>
+
+  <section class="code">
+    <h2>Exemplo em PHP</h2>
+    <pre><code>class Carro {
+  public $cor;
+  public $modelo;
+
+  public function andar() {
+    echo "O carro está andando.";
+  }
+}</code></pre>
+    <p>Acima, criamos uma classe chamada <code>Carro</code> com dois atributos (<code>$cor</code> e <code>$modelo</code>) e um método chamado <code>andar()</code>.</p>
+  </section>
+
+  <a href="../index.html" class="btn-voltar">&larr; Voltar para a Home</a>
+
+  <footer>
+    <p>Desenvolvido por Maria Clara Caputo Matiotti e Gabrielly Alessandra Gonçalves Xavier</p>
+  </footer>
+</body>
+</html>

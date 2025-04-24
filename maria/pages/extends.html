@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estender (Extends) - POO em PHP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --primary: #1a1a40;
+      --secondary: #ff6f61;
+      --accent: #ffe66d;
+      --text: #f5f5f5;
+      --bg: #f0f0f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--text);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .container h2 {
+      margin-top: 2rem;
+      color: var(--secondary);
+    }
+
+    pre {
+      background-color: #2d2d2d;
+      color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .lottie {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Estender (Extends) em POO</h1>
+  </header>
+
+  <div class="container">
+    <p>O <strong>extends</strong> é usado para criar uma relação de herança entre classes. Ele permite que uma classe filha herde os métodos e atributos de uma classe pai, possibilitando reutilização de código.</p>
+
+    <h2>Exemplo de Estender (Extends)</h2>
+    <pre><code>class Veiculo {
+  public $cor;
+
+  public function __construct($cor) {
+    $this->cor = $cor;
+  }
+
+  public function info() {
+    return "O veículo é de cor " . $this->cor;
+  }
+}
+
+class Carro extends Veiculo {
+  public $modelo;
+
+  public function __construct($cor, $modelo) {
+    parent::__construct($cor);
+    $this->modelo = $modelo;
+  }
+
+  public function info() {
+    return parent::info() . " e o modelo é " . $this->modelo;
+  }
+}
+
+$carro = new Carro("vermelho", "Fusca");
+echo $carro->info();
+    </code></pre>
+
+    <p>No exemplo acima, a classe <strong>Carro</strong> estende a classe <strong>Veiculo</strong> e herda o método <code>info()</code>. A classe filha pode sobrescrever esse método, como feito no exemplo.</p>
+
+    <div class="lottie">
+      <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_cw6rrnuw.json" background="transparent" speed="1" style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+    </div>
+  </div>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar para a Home</a>
+</body>
+</html>

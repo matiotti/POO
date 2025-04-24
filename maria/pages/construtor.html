@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construtor - POO em PHP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --primary: #1a1a40;
+      --secondary: #ff6f61;
+      --accent: #ffe66d;
+      --text: #f5f5f5;
+      --bg: #f0f0f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--text);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .container h2 {
+      margin-top: 2rem;
+      color: var(--secondary);
+    }
+
+    pre {
+      background-color: #2d2d2d;
+      color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .lottie {
+      text-align: center;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Construtor em POO</h1>
+  </header>
+
+  <div class="container">
+    <p>O construtor é um método especial chamado automaticamente quando um objeto é criado. Em PHP, ele é definido com o nome <code>__construct</code>.</p>
+
+    <h2>Exemplo de Construtor</h2>
+    <pre><code>class Pessoa {
+  public $nome;
+
+  public function __construct($nome) {
+    $this->nome = $nome;
+  }
+
+  public function apresentar() {
+    return "Olá, meu nome é " . $this->nome;
+  }
+}
+
+$pessoa = new Pessoa("Maria");
+echo $pessoa->apresentar();</code></pre>
+
+    <p>No exemplo acima, o construtor define o nome da pessoa no momento em que o objeto é criado.</p>
+
+    <div class="lottie">
+      <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_q5pk6p1k.json" background="transparent" speed="1" style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+    </div>
+  </div>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar para a Home</a>
+</body>
+</html>
